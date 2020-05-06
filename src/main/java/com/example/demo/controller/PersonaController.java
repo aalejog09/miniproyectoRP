@@ -28,7 +28,9 @@ public class PersonaController {
 		if(id != null && id != 0) {
 			
 			model.addAttribute("persona", personaServices.get(id));
+			
 		} else {
+			
 			model.addAttribute("persona", new Persona());
 		}
 		return "save";
