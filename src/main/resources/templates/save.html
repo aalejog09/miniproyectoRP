@@ -9,21 +9,21 @@
 </head>
 <body>
 	<div class="container">
-		<form action="#" th:action="@{/save}" class="form-group" th:object=${persona} method="post">
+		<form action="#" th:action="@{/save}" th:object="${persona}" method="post">
 			<!-- Nombre de la persona -->
 			<div class="form-group">
 				<label for="nombre">Nombre</label>
-				<input type="text" class="form-control" id="nombre" name="nombre"> 
+				<input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre"> 
 			</div>
 			<!-- Correo de la persona -->
 			<div class="form-group">
 				<label for="nombre">Correo</label>
-				<input type="text" class="form-control" id="correo" name="correo"> 
+				<input type="text" class="form-control" id="correo" th:field="*{correo}" name="correo"> 
 			</div>
 				<!-- Nacionalidad de la persona -->
 			<div class="form-group">
 				<label for="nombre">Nacionalidad</label>
-				<input type="text" class="form-control" id="nacionalidad" name="nacionalidad"> 
+				<input type="text" class="form-control" id="nacionalidad" th:field="*{nacionalidad}" name="nacionalidad"> 
 			</div>
 			<!-- Guardar datos -->
 			<button type="submit" class="btn btn-success">Guardar</button>
