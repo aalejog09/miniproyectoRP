@@ -17,7 +17,7 @@ public class PersonaController {
 	@Autowired
 	private PersonaServices personaServices;
 
-	@RequestMapping("/")
+	@RequestMapping({"/", "index"})
 	public String index(Model model) {
 		model.addAttribute("list", personaServices.getAll());
 		return "index";
@@ -39,7 +39,7 @@ public class PersonaController {
 	@PostMapping("/save")
 	public String save(Persona persona, Model model) {
 		personaServices.save(persona);
-		return "redirect:/";
+		return "redirect:/index";
 		
 	}
 
@@ -47,7 +47,7 @@ public class PersonaController {
 	public String delete(@PathVariable Long id, Model model) {
 		
 		personaServices.delete(id);
-		return "redicect:/";
+		return "redirect:/index";
 	}
 	
 }
